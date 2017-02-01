@@ -33,7 +33,7 @@ public class geometryController extends HttpServlet {
      */
     private final String LENGTH = "length";
     private final String WIDTH = "width";
-    private final String ANSWER = "answer";
+    private final String AREA = "area";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -46,7 +46,7 @@ public class geometryController extends HttpServlet {
             
             double area = calc.calculateArea(length, width);
             
-            request.setAttribute(ANSWER,area);
+            request.setAttribute(AREA,area);
             request.setAttribute(WIDTH,width);
             request.setAttribute(LENGTH,length);
             
@@ -55,7 +55,7 @@ public class geometryController extends HttpServlet {
             
             
         }catch(Exception e){
-            request.setAttribute(ANSWER, e.getMessage());
+            request.setAttribute("area", e.getMessage());
         }
         
         RequestDispatcher view = request.getRequestDispatcher("form.jsp");

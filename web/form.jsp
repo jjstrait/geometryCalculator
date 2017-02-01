@@ -29,7 +29,7 @@
                 </table>
                 <input id="submit" type="submit" value="Submit"> 
             </form>
-                        <h2>  Area = ${answer}</h2>
+                        <h2>  Area = ${area}</h2>
             
         </div>
         
