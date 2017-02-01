@@ -31,6 +31,9 @@ public class geometryController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    private final String LENGTH = "length";
+    private final String WIDTH = "width";
+    private final String AREA = "area";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -38,14 +41,14 @@ public class geometryController extends HttpServlet {
             
             geometryCalculator calc = new geometryCalculator();
             
-            String length = request.getParameter("length");
-            String width = request.getParameter("width");
+            String length = request.getParameter(LENGTH);
+            String width = request.getParameter(WIDTH);
             
             double area = calc.calculateArea(length, width);
             
-            request.setAttribute("area",area);
-            request.setAttribute("width",width);
-            request.setAttribute("length",length);
+            request.setAttribute(AREA,area);
+            request.setAttribute(WIDTH,width);
+            request.setAttribute(LENGTH,length);
             
              
             
